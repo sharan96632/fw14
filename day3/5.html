@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .item1{ grid-area:Navigation;}
+        .item2{ grid-area:box1 ;}
+        .item3{ grid-area:box2;}
+        .item4{ grid-area:box3;}
+        .item5{ grid-area: box4 ;}
+       
+        
+        .container{
+             display: grid;
+             grid-template-areas: 
+             'Navigation Navigation Navigation Navigation'
+             'box1 box2 box3 box4'
+             
+             ;
+             grid-gap: 10px;
+             background-color: white;
+             padding: 300px;
+           
+         }
+        .item1{
+            background-color: red;
+            text-align: center;
+           padding: 100px;
+          
+        }
+        .item2{
+            background-color: greenyellow;
+            text-align: center;
+            padding: 100px;
+          
+        }
+        .item3{
+            background-color: greenyellow;
+            text-align: center;
+            padding: 100px;
+           
+        }
+        .item4{
+            background-color: greenyellow;
+            text-align: center;
+            padding: 100px;
+           
+        }
+        .item5{
+            background-color: greenyellow;
+            text-align: center;
+            padding: 100px;
+            
+        }
+        @media only screen and (max-width:600px){
+            grid-template-areas: 
+             'Navigation Navigation Navigation Navigation'
+             'box1 box3'
+             'box2 box4'
+             
+        }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">Navigation</div>
+        <div class="item2">box1</div>
+        <div class="item3">box2</div>
+        <div class="item4">box3</div>
+        <div class="item5">box4</div>
+        
+    </div>
+</body>
+</html>

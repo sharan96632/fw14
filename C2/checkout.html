@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+</head>
+<style>
+
+</style>
+<body>
+    <label for="">Name:</label>
+    <br>
+    <input type="text" placeholder="Enter your name" >
+<br><br>
+    <div id="address">
+    <label for="">Address</label>
+    <br>
+    <input type="text" id="addd" placeholder="Enter your address" >
+<br><br>
+    <label for="">Mobile</label>
+    <br>
+    <input type="number" placeholder="Enter your number">
+<br><br>
+    <label for="">Pincode</label>
+    <br>
+    <input type="number" placeholder="Enter your pincode here">
+    <br><br>
+    <button id="submit" onclick="">Submit</button>
+    
+</div>
+</body>
+</html>
+<script>
+    let address1=document.getElementById("addd").value;
+document.getElementById("submit").addEventListener("click",alertsystem);
+
+function alertsystem(){
+    if(address1 == ""){
+      alert("Please fill all your details");
+
+    }
+    
+    let msg="Order placed successfully";
+
+    alert(msg);
+
+    let alert111=new Promise(function(resolve,reject){
+
+        setInterval(function(){
+            resolve("Your order is accepted");
+        },3000);
+
+    });
+
+    alert111.then(function(res){
+        alert(res);
+    });
+
+
+
+
+    let alert112=new Promise(function(resolve,reject){
+
+setInterval(function(){
+    resolve("Your order is being cooked");
+},8000);
+
+});
+
+alert112.then(function(res){
+alert(res);
+});
+
+
+
+
+let alert113=new Promise(function(resolve,reject){
+
+setInterval(function(){
+    resolve("Your order is ready ");
+},10000);
+
+});
+
+alert113.then(function(res){
+alert(res);
+});
+
+
+
+let alert114=new Promise(function(resolve,reject){
+
+setInterval(function(){
+    resolve("Order out for delivery");
+},12000);
+
+});
+
+alert114.then(function(res){
+alert(res);
+})
+
+
+
+
+}
+
+</script>

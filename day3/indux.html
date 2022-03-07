@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<style>
+    body{
+       
+    }
+#menushow{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#forcount{
+    text-align: right;
+    width: 90%;
+    
+    height: 25px;
+    font-size: larger;
+    font-weight: bolder;
+}
+a{
+     
+     text-decoration: none;
+     font-size: large;
+     font-weight: bold;
+     margin-left: 10%;
+     
+    
+
+ }
+ #cart{
+     
+     padding: 15px;
+ }
+</style>
+<body>
+    <div id="cart">
+        <a href="cart.html">  GO TO CART PAGE</a>
+    </div>
+    <div id="forcount"></div>
+
+    <div id="menushow"></div>
+</body>
+</html>
+<script>
+   let count=0;
+    async function getDishes(){
+     try{
+        let res = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
+
+        let data = await res.json() ;
+
+        console.log("data:",data);
+
+    
+        displayDish(data.categories);
+    }catch(err){
+        console.log("error found");
+    }
+}
+
+function displayDish(data1){
+
+    data1.forEach(function(getdis){
+
+
+        console.log(getdis);
+        let div = document.createElement("div");
+
+       let img =document.createElement("img");
+       img.src=getdis.strCategoryThumb;
+
+       let name=document.createElement("h3");
+       name.innerText=getdis.strCategory;
+
+       let aaa=Math.floor(Math.random()*50);
+       let price=document.createElement("h3");
+       price.innerText="₹"+getdis.idCategory*aaa;
+
+       let desc=document.createElement("p");
+       desc.innerText=getdis.strCategoryDescription;
+
+
+       let but=document.createElement("button");
+       but.innerText="Add to cart"
+       but.style.width="20%"
+       but.style.height="10%"
+       but.style.backgroundColor="white"
+       but.style.color="Red"
+       but.style.fontSize="18px"
+
+       but.setAttribute("id","but1");
+
+      but.addEventListener("click",function(){
+        document.getElementById("forcount").innerHTML="";
+          count++;
+         
+          forcount.append(count);
+
+          forcart(getdis)
+      })
+
+
+
+      div.append(img,name,price,desc,but)
+       menushow.append(div)
+    })
+}
+
+getDishes();
+
+let dataofmeal=JSON.parse(localStorage.getItem("dataofmeal"))||[];
+let count111=JSON.parse(localStorage.getItem("count111"))||[];
+function forcart(getdis){
+   let mealarray=[];
+   mealarray.push(getdis);
+    localStorage.setItem("dataofmeal").JSON.stringify(getdis);
+    count111++;
+    localStorage.setItem("count111").JSON.stringify(count111);
+
+}
+</script>

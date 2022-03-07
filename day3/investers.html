@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>investers.com</title>
+    <style>
+     .container{
+         display: grid;
+         grid-template-columns: repeat(4,1fr);
+         border: 1px solid black;
+         height: 400px;
+         width: 1500px;
+        margin: auto;
+     }
+     .container>div{
+         display: grid;
+         height: 400px;
+         width: 370px;
+         text-align: center;
+         margin-right: 10px;
+         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+         border-radius: 10px;
+     }
+     @media only screen and (min-width : 375px) and (max-width :768px){
+         .container{
+             width: 1%;
+             grid-template-columns: repeat(2,1fr);
+         }
+     } 
+     @media only screen and (min-width : 0px) and (max-width :375px){
+         .container{
+            width: 1%;
+             grid-template-columns: repeat(1,1fr);
+         }
+     }  
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="box1">
+        <img src="https://d27028dliefpk3.cloudfront.net/assets/our-investors/ankush-sachdeva-sharechat.jpg" height="300" width="370">
+        <b>Ankush Sachdev</b>
+        <div>Co-founder and CEO,shareChat</div>
+    </div>
+    <div class="box2">
+        <img src="https://d27028dliefpk3.cloudfront.net/assets/our-investors/bhanu-pratap-singh-sharechat.jpg" height="300" width="370">
+        <b>Bhanu Prathap Singh</b>
+        <div>Co-founder and CEO,shareChat</div>
+
+    </div>
+    <div class="box3">
+        <img src="https://d27028dliefpk3.cloudfront.net/assets/our-investors/farid-ahsan-sharechat.png" height="300" width="370">
+        <b>Farid Ahsan</b>
+        <div>Co-founder and COO,shareChat</div>
+    </div>
+    <div class="box4">
+        <img src="https://d27028dliefpk3.cloudfront.net/assets/our-investors/amit-kumar-agarwal-nobroker.jpg" height="300" width="370">
+        <b>Amit Kumar Agarwal</b>
+        <div>founder and CEO,shareChat</div>
+    </div>
+    </div>
+</body>
+</html>

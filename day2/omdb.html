@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Page</title>
+    <style>
+        #container{
+            width: 98%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        #navbar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-bottom: 50px;
+        }
+        h3{
+            margin: 0%;
+            padding: 0%;
+            color: white;
+        }
+        #search{
+            width: 400px;
+        }
+        body{
+            background-color: rgb(15,23,30);
+        }
+        p{
+            color: whitesmoke;
+        }
+        h1{
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div><h3>Movies World</h3></div>
+        <div>
+            <form id="form">
+                <input id="search" type="text">
+                <input type="submit">
+              </form>
+        </div>
+    </div>
+    
+    
+    
+    <div id="container"></div>
+    
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", myfunction);
+    function myfunction(event){
+        event.preventDefault();
+        var inp = document.querySelector("input").value;
+        let url = "http://www.omdbapi.com/?apikey=56a185c8&s="+inp;
+
+        async function getData() {
+        try {
+            let res = await fetch(url);
+            let data = await res.json();
+            // var new122 = data.search;
+            // console.log(data);
+            appendUser(data)
+        } catch(err) {
+            display(err)
+        }
+    };
+    getData();
+    function display(err){
+        let h1 = document.createElement("h1");
+        h1.textContent = "Opps Not Found";
+
+        document.querySelector("#container").append(h1);
+    }
+
+    function appendUser(data){
+         console.log(data);
+        data.Search.forEach(function(elem){
+            console.log(elem);
+            let holder = document.createElement("div");
+            holder.setAttribute("id", "holder");
+
+            var imagebox = document.createElement("div");
+            imagebox.setAttribute("id","imagebox");
+
+            var image = document.createElement("img");
+            image.setAttribute("src", elem.Poster);
+
+            imagebox.append(image);
+
+            var content = document.createElement("div");
+            content.setAttribute("id", "content");
+
+            var name = document.createElement("h3");
+            name.textContent = elem.Title;
+
+            var release = document.createElement("p");
+            release.textContent = `Release Year: ${elem.Year}`;
+            release.setAttribute("id", "date");
+
+            var type = document.createElement("p");
+            type.textContent = `Type: ${elem.Type}`;
+
+            content.append(name,release,type);
+
+            holder.append(imagebox,content);
+
+            document.querySelector("#container").append(holder);
+
+
+        });
+    };
+        
+    }
+    
+    
+    
+
+    
+</script>

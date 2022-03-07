@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div id="navbar">
+      <!--Add menu divs here-->
+      <div id="count"></div>
+    </div>
+
+    <div id="menu">
+
+      <!--Show indian dishes here in grid format-->
+      <!-- add an add to cart button to each dish, give it HTML id as 'addtocart' -->
+      <div id="menue"></div>
+      
+
+    </div>
+  </body>
+
+</html>
+<script >
+  let url= `https://www.themealdb.com/api/json/v1/1/filter.php?a=Indian`;
+
+async function getFood(){
+    try{
+     let res =await fetch(url);
+    
+     let data=await res.json();
+     let arr=data.meals;
+
+     for(i=0;i<arr.length;i++){
+         arr[i].price=Math.floor(Math.random()*350);
+     }
+     renderProducts(arr);
+     console.log(data);
+}catch(err){
+    console.log(err);
+}
+}
+
+
+</script>

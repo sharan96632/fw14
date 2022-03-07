@@ -1,0 +1,184 @@
+#header{
+    display: flex;
+    gap: 500px;
+    margin-top: 1%;
+    margin-right: 3%;
+}
+
+#head1{
+    display: flex;
+    gap: 20px;
+    padding-left: 5%;
+}
+#head2{
+  display: flex;
+}
+#head3{
+    display: flex;
+    gap: 10px;
+    margin-right: 10%;
+}
+#head4{
+    display: flex;
+    gap: 50px;
+}
+#down{
+    display: flex;
+   text-shadow: 10px;
+   text-decoration: double;
+    gap: 50px;
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 70%;
+    background: #f1f1f1;
+  }
+  
+  form.example button {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+   
+  }
+
+  * {
+    box-sizing: border-box;
+    
+  }
+  
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 70%;
+    background: #f1f1f1;
+    
+  }
+  
+  form.example button {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+    gap: 40px;
+  }
+  #container1{
+   
+    height:600px;
+    width: 1300px;
+   margin-left: 5%;
+   display: flex;
+  }
+  #down{
+    margin-left: 7%;
+    margin-top: 2%;
+  }
+  #bigcontainer{
+  
+    height: 1000px;
+    width: 1500px;
+  }
+  #cont1{
+    
+    height: 600px;
+    width: 650px;
+    text-align: center;
+  }
+  #cont2{
+  
+    height: 800px;
+    width: 650px;
+    text-align: left;
+
+  }
+  #word{
+    text-align: center;
+  }
+  #imgcont{
+   
+    height: 500px;
+    width: 80%;
+    display: flex;
+    margin-left: 100px;
+    margin-top: 2%;
+  }
+  #img1{
+  
+    height: 500px;
+    width: 20%;
+    margin-left: 4%;
+    text-align: left;
+    
+  }
+  #search{
+    text-align: center;
+  }
+  #hi{
+    text-align: center;
+  }
+  #last1{
+    
+    height: 600px;
+    width: 80%;
+    display: flex;
+    margin-left: 100px;
+    
+  }
+  #last2{
+    
+    height: 600px;
+    width: 40%;
+    margin-left: 3%;
+    text-align: left;
+    
+  }
+  #footer1{
+    text-align: center;
+  }
+  #footer{
+    text-align: center;
+  }
+  #signbutton{
+    background-color: black;
+    color: white;
+  }

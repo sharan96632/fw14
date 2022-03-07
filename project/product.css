@@ -1,0 +1,47 @@
+#header{
+    display: flex;
+    gap: 500px;
+    margin-top: 1%;
+    margin-right: 3%;
+}
+
+#head1{
+    display: flex;
+    gap: 20px;
+    padding-left: 5%;
+}
+#head2{
+  display: flex;
+}
+#head3{
+    display: flex;
+    gap: 10px;
+    margin-right: 10%;
+}
+#head4{
+    display: flex;
+    gap: 50px;
+}
+#down{
+    display: flex;
+   text-shadow: 10px;
+   text-decoration: double;
+    gap: 50px;
+}
+#prod{
+    text-align: center;
+}
+#products{
+    
+    height: 600px;
+    width: 80%;
+    margin-left:10% ;
+    margin-right: 10%;
+    display: flex;
+}
+#pro1{
+    
+    height: 600px;
+    width: 25%;
+    text-align: center;
+}

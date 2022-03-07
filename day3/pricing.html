@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        .gridcontainer{
+          
+            height: 500px;
+            width: 1400px;
+            
+        }
+        .gridhead{
+            
+            height: 200px;
+            width: 1400px;
+          
+        }
+        .head{
+            text-align: center;
+            text-shadow: black 1px;
+        }
+        .main{
+          
+            height:300px ;
+            width: 1400px; 
+            display: flex;
+            padding-left: 150px;
+        }
+        .box1{
+         
+            height: 300px;
+            width: 400px;
+            padding-right: 20pxs;
+            text-align: center;
+        }
+        .box2{
+           
+            height: 300px;
+            width: 400px;
+            padding-right: 20px;
+            text-align: center;
+        }
+        .box3{
+           
+            height: 300px;
+            width: 400px;
+            padding-right: 20px;
+            text-align: center;
+        }
+        .button{
+            background-color: blue;
+            cursor: pointer;
+            display: inline-block;
+            color: white;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="gridcontainer">
+        <div class="gridhead">
+            <div class="head">
+                <h1>CHOOSE A PLAN THAT RIGHT FOR YOUR BUSINESS</h1>
+                <p>we collect from our user sa you can get an experience with</p>
+                <p>our website are really like!</p>
+            </div>
+            
+        </div>
+        <div class="main">
+            <div class="box1">
+                <h3>Starter Plan</h3>
+                <h2 style="color: green;">Free</h2>
+                <div style="font-size: 10px;">per month</div>
+                <br>
+                <div>we collect rewiwe from our user</div>
+                <div>so you can get an honest option of what an experiance with out website  </div>
+                <br>
+                <br>
+                <br>
+                <input type="submit" value="start now" class="button">
+
+            </div>
+            <div class="box2">
+                <h3>Business Plan</h3>
+                <h2 style="font-family: 'Courier New', Courier, monospace;color: orangered;">$39.00</h2>
+                <div style="font-size: 10px;"> per month</div>
+                <br>
+                
+                <div>we collect rewiwe from our user</div>
+                <div>so you can get an honest option of what an experiance with out website  </div>
+                <br>
+                <br>
+                
+                <input type="submit" value="start now" class="button">
+            </div>
+            <div class="box3">
+                <h3>Premium Plan</h3>
+                <h2 style="font-family: 'Courier New', Courier, monospace;color: rgb(47, 10, 252);">$59.00</h2>
+                <div style="font-size: 10px;"> per month</div>
+                <br>
+                
+                <div>we collect rewiwe from our user</div>
+                <div>so you can get an honest option of what an experiance with out website  </div>
+                <br>
+                <br>
+                
+                <input type="submit" value="start now" class="button">
+            </div>
+        </div>
+    </div>
+    <script>
+        var cart =JSON.parse(localStorage.)
+    </script>
+</body>
+</html>

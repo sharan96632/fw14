@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,td{
+           border: 1px solid black;
+           padding: 10px;
+        }
+    </style>
+</head>
+<body>
+  
+    <form id="form">
+        <label>ticket</label>
+        <input id="body" type="text" >
+        <label>date</label>
+        <input id="date" type="date" >
+        <label>ticket number</label>
+        <input id="number" type="number" >
+        <input type="submit" value="submit">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Ticket Body</th>
+                <th>date</th>
+                <th>ticket number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+   
+</body>
+</html>
+
+<script>
+  document.querySelector("#form").addEventListener("submit",addItem)
+
+      function addItem(event) {
+          event.preventDefault();
+        var ticket = document.querySelector("#body").value;
+        var date=document.querySelector("#date").value ;
+        var number=document.querySelector("#number").value;
+       
+      
+    var row=document.createElement("tr");
+
+    var td1=document.createElement("td");
+    td1.textContent= body;
+    var td2=document.createElement("td");
+    td2.textContent= date ;
+    var td3=document.createElement("td");
+    td3.textContent= number ;
+     
+    row.append(td1,td2,td3);
+    document.querySelector("tbody").append(row);
+      }
+</script>

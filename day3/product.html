@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#data{
+    display:grid ;
+    grid-template-columns: 25% 25% 25% 25%;
+
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    grid-gap :20px;
+
+}
+img{
+    width: 30%;
+    height: 150px;
+}
+</style>
+<body>
+    <h1>
+        PRODUCT PAGE
+    </h1>
+    <div id="data"></div>
+</body>
+<script>
+     let container=document.getElementById("data");
+
+     let data=[];
+
+     fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
+     .then(function(res){
+         return res.json();
+     })
+     .then(function(res){
+         Data=res;
+         console.log("data:",data)
+         appendProducts(Data)
+     });
+       function appendProducts(){
+       d.forEach(element => {
+           
+       });(function (element){
+        let div=document.createElement("div");
+
+        let strCategoryThumb=document.createElement("img");
+
+        strCategoryThumb.src = el.strCategoryThumb;
+           
+        let strCategory= documents.createElement("p");
+        strCategory.innerText=el.trCategory;
+
+        let strCategoryDescription=documents.createElement("p")
+           strCategoryDescription.innerText=el.strCategoryDescription;
+
+        
+        div.append(strCategoryThumb,strCategory,strCategoryDescription)
+
+        container.appendChild(div);
+         });
+           
+      }
+</script>
+</html>

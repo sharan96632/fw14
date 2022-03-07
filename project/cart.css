@@ -1,0 +1,67 @@
+#header{
+    display: flex;
+    gap: 500px;
+    margin-top: 1%;
+    margin-right: 3%;
+}
+
+#head1{
+    display: flex;
+    gap: 20px;
+    padding-left: 5%;
+}
+#head2{
+  display: flex;
+}
+#head3{
+    display: flex;
+    gap: 10px;
+    margin-right: 10%;
+}
+#head4{
+    display: flex;
+    gap: 50px;
+}
+#down{
+    display: flex;
+   text-shadow: 10px;
+   text-decoration: double;
+    gap: 50px;
+}
+h1{
+    text-align: center;
+    font-size: xx-large;
+    margin-top: 7%;
+}
+#shop{
+    text-align: end;
+    margin-bottom: 7%;
+}
+#big{
+    
+    height: 1000px;
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+}
+#img{
+ 
+    height: 1000px;
+    width: 15%;
+    
+}
+#img1{
+  
+  height: 1000px;
+  width: 40%;
+  text-align: left;
+  margin-left: 5%;
+}
+#main{
+    
+    width: 500px;
+    display: flex;
+}
+#last{
+ text-align: right;
+}

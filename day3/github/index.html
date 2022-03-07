@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    margin: 0px;
+}
+#navbar{
+
+
+    display: flex;
+    background-color: black;
+    color: white;
+}
+
+#logo img{
+
+    width: 30%;
+    padding: 9px;
+}
+
+#profile-img{
+
+width: 50%;
+border-radius: 50%;
+height: 40px;
+
+}
+
+#list li{
+
+    display: inline;
+    margin-right: 2%;
+}
+#search{
+
+    width: 10%;
+    padding: 12px;
+}
+
+#logo{
+
+    width: 5%;
+    text-align: right;
+}
+#options{
+
+    width: 75%;
+}
+#profile{
+
+    width: 5%;
+}
+
+</style>
+<body>
+   <div id="container"></div>
+
+</body>
+</html>
+
+<script type="module">
+    import navbar from'./github/navbar.js'
+
+    import getuser from './github/getuser.js'
+
+    let container =document.getElementById('container')
+
+    container.innerHTML=navbar();
+
+    let input = document.getElementById('search_input')
+
+    input.addEventListener('keypress',searchUser)
+
+    async function searchUser(event){
+        if(event.key==='Enter')
+      {
+       let query=input.value
+      
+
+    let query=input.value
+     
+    let response=await getuser(query)
+
+    console.log('response:',response)
+
+    }
+</script>

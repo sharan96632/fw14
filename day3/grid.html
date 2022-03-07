@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid22</title>
+    <style>
+        .item1{ grid-area:HEADER ;}
+        .item2{ grid-area:ARTICLE ;}
+        .item3{ grid-area: TEXT1}
+        .item4{ grid-area: TEXT2;}
+        .item5{ grid-area: MAIN ;}
+        .item6{ grid-area:FOOTER ;}
+        
+        .container{
+             display: grid;
+             grid-template-areas: 
+             'HEADER HEADER HEADER HEADER HEADER HEADER'
+             'ARTICLE ARTICLE ARTICLE TEXT1  TEXT1  TEXT1'
+             'ARTICLE ARTICLE ARTICLE TEXT2 TEXT2 TEXT2 '
+             ' MAIN  MAIN  MAIN  MAIN  MAIN  MAIN  '
+             ' MAIN  MAIN  MAIN  MAIN  MAIN  MAIN  '
+             ' MAIN  MAIN  MAIN  MAIN  MAIN  MAIN  '
+             'FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER'
+             ;
+             grid-gap: 10px;
+             background-color: white;
+             padding: 300px;
+         }
+        .container>div{
+            background-color: purple; 
+            text-align: center;
+            padding: 100px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">HEADER</div>
+        <div class="item2">ARTICLE</div>
+        <div class="item3">TEXT1</div>
+        <div class="item4"> TEXT2</div>
+        <div class="item5">MAIN</div>
+        <div class="item6">FOOTER</div>
+    </div>
+    
+</body>
+</html>
