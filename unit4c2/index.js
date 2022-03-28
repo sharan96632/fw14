@@ -6,7 +6,7 @@ const app = express();
 const connect =require("mongodb://127.0.0.1:27017/bank");
 app.use(express.json());
 
-app.listen(5500, async()=>{
+app.listen(5600, async()=>{
     try {
         await connect();
     } catch (error) {
