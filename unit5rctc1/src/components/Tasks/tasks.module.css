@@ -1,0 +1,14 @@
+.tasks {
+  width: 175px;
+  height: 20px;
+}
+
+.empty {
+  width: 175px;
+  height: 20px;
+}
+ul{
+  border: 1px solid black;
+  width:350px;
+  margin-left: 30%;
+}
