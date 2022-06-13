@@ -1,58 +1,66 @@
-import React, { useState } from "react";
-import ButtonComponent from "./components/ButtonComponent";
-import CityRow from "./components/CityRow";
-import "./styles.css";
-import axios from "axios";
+import React from "react";
+import ButtonComponents from "./components/ButtonComponent"
+import { useEffect } from "react";
+import { useState } from "react";
+import ReactPaginate from 'react-paginate';
 
-export default function App() {
-  const [data, setData] = useState([]);
-  const [pglimit] = useState(10);
-  const [currpage, setCurrpage] = useState(0);
-  React.useEffect(() => {
-    pagination(1, 10, 1);
-  }, []);
-  const next = () => {
-    pagination(currpage + 1, pglimit, 1);
-  };
-  const prev = () => {
-    if (currpage > 0) {
-      pagination(currpage - 1, pglimit, -1);
-    }
-  };
-  const pagination = async (s, e, i) => {
-    return await axios
-      .get(
-        `https://json-server-mocker-masai.herokuapp.com/cities?_page=${s}&_limit=${e}}`
-      )
-      .then((res) => {
-        setData(res.data);
-        setCurrpage(currpage + i);
-      });
-  };
+const per_page=100;
+ function App () {
+    const [currentpage ,setCurrentPage]=useState(0);
+    const [data , setData]=useState([]);
 
-  return (
-    <div className="App">
-      <table>
-        <tr>
-          <th>ID</th>
-          <th>CITY NAME</th>
-          <th>COUNTRY NAME</th>
-          <th>POPULATION</th>
-        </tr>
-
-        {data.map((e) => {
-          return <CityRow key={e.id} {...e} />;
-        })}
-      </table>
-
-      <div>
-        <ButtonComponent
-          id="SORT_BUTTON"
-          title={`Sort by Increasing Population`}
-        />
-        <ButtonComponent onClick={prev} title="PREV" id="PREV" />
-        <ButtonComponent onClick={next} id="NEXT" title="NEXT" />
-      </div>
-    </div>
-  );
+    useEffect(()=>{
+   fetchData();
+    },[])
+   function fetchData(){
+       fetch('https://json-server-mocker-masai.herokuapp.com/cities')
+       .then((res)=>res.json())
+       .then((data)=>{
+           setData(data)
+       });
+   }
+   function handlePageClick({selected : selectedPage}){
+   console.log("selectedpage" , selectedPage);
+ setCurrentPage(selectedPage); 
 }
+
+const offset =currentpage*per_page;
+
+const currentPerData =data
+.slice(offset,offset+per_page)
+.map((res,index) => <div key={index}>{res.name},{res.country},{res.population}</div>)
+
+const pageCount = Math.ceil(data.length/per_page);
+return(
+    <div>
+         <h1>PLEASE GO THROUGH MY CODE </h1>
+        
+        {currentPerData};
+       
+
+        
+        <ButtonComponents
+        
+        
+        
+        />
+        <ReactPaginate 
+        previousLabel={"prev"}
+        nextLabel={"next"}
+        breakLabel={"..."}
+        breakClassName={"break-me"}
+        pageCount={pageCount}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={5}
+        onPageChange={handlePageClick}
+        containerClassName={"pagination"}
+        subContainerClassName={"pages pagination"}
+        activeClassName={"active"}
+        />
+        
+    </div>
+)
+
+ }
+
+ export default App;  
